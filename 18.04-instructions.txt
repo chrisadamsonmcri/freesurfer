@@ -1,0 +1,14 @@
+apt install libblosc-dev libbrotli-dev libopenjp2-7-dev libgif-dev
+
+rebuilt ITK, VTK, libann
+https://github.com/Kitware/VTK.git
+
+VTK set CXX_FLAGS -std=c++03
+ITK set CXX_FLAGS
+
+remove resurf from CMakeLists.txt, has a ITK 5.0.0 header
+
+DISABLE QATOOLS_MODULE
+
+
+QT_QPA_PLATFORM_PLUGIN_PATH=/usr/lib/x86_64-linux-gnu/qt5/plugins/platforms freeview
