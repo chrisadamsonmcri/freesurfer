@@ -812,7 +812,7 @@ void LayerSurface::InitializeActors()
     mapper3->SetInputData(m_vertexPoly2D[i]);
 #else
     mapper3->SetInput(m_vertexPoly2D[i]);
-#endif    
+#endif
     mapper3->ScalarVisibilityOff();
     m_vertexActor2D[i]->SetMapper(mapper3);
     m_vertexActor2D[i]->SetProperty( m_vertexActor2D[i]->MakeProperty() );
