@@ -57,6 +57,7 @@ protected slots:
   void OnButtonGeoSegClearFilling();
   void OnButtonGeoSegApply();
   void OnButtonGeoSegUndo();
+  void On3DBrushChanged(bool b3D);
   void OnColorPickerGeoSeg(const QColor& color);
   void OnSliderGeoOpacity(int nVal);
   void OnButtonGeoSegAbort();
