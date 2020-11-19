@@ -119,9 +119,11 @@ int ImageFWrite(IMAGE *I, FILE *fp, const char *fname)
 {
   byte *image;
   int ecode, type, frame;
-  char buf[100];
+  char* buf;
 
   if (!fname) fname = "ImageFWrite";
+  
+  buf = (char*)malloc(strlen(fname) + 1);
 
   strcpy(buf, fname); /* don't destroy callers string */
 
@@ -163,6 +165,7 @@ int ImageFWrite(IMAGE *I, FILE *fp, const char *fname)
       I->image = image;
       break;
   }
+  free(buf);
   return (0);
 }
 
