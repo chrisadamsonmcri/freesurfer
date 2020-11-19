@@ -88,6 +88,10 @@ public:
   {
     return m_bIsCloning;
   }
+  bool Get3DBrush()
+  {
+    return m_b3DBrush;
+  }
 
   QVariantMap GetGeosSettings()
   {
@@ -103,6 +107,7 @@ signals:
   void FillValueChanged(double);
   void EraseValueChanged(double);
   void BrushSizeChanged(int);
+  void Brush3DChanged(bool);
 
 public slots:
   void SetFillValue(double val);
@@ -110,6 +115,11 @@ public slots:
   void SetBrushSize( int nSize );
   void SetBrushTolerance( int nTolerance );
   void SetReferenceLayer( LayerVolumeBase* layer );
+  void Set3DBrush( bool bEnable )
+    {
+        m_b3DBrush = bEnable;
+    }
+
   void SetDrawRangeEnabled( bool bEnable );
   void SetExcludeRangeEnabled( bool bEnable );
   void SetDrawConnectedOnly( bool bEnable );
@@ -140,7 +150,7 @@ protected:
   bool m_bDrawConnectedOnly;
   bool  m_bFill3D;
   bool m_bIsCloning;
-
+  bool m_b3DBrush;
   double m_dFillValue;
   double m_dEraseValue;
 

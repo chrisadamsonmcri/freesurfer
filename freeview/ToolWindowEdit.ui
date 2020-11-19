@@ -482,6 +482,13 @@
          </property>
         </widget>
        </item>
+       <item row="0" column="2">
+        <widget class="QCheckBox" name="checkBox3DBrush">
+        <property name="text">
+        <string>3D brush</string>
+        </property>
+        </widget>
+        </item>
        <item row="6" column="6">
         <widget class="QtColorPicker" name="colorPickerContour" native="true"/>
        </item>
@@ -778,7 +785,7 @@
          <item>
           <widget class="QCheckBox" name="checkBoxConstrain">
            <property name="text">
-            <string>Constrain drawings to only voxels that are 
+            <string>Constrain drawings to only voxels that are
 connected to existing labels</string>
            </property>
           </widget>
@@ -2016,6 +2023,23 @@ Shift + Left button to erase.
    </hints>
   </connection>
   <connection>
+ <sender>checkBox3DBrush</sender>
+ <signal>toggled(bool)</signal>
+ <receiver>ToolWindowEdit</receiver>
+ <slot>On3DBrushChanged(bool)</slot>
+ <hints>
+  <hint type="sourcelabel">
+   <x>209</x>
+   <y>306</y>
+  </hint>
+  <hint type="destinationlabel">
+   <x>205</x>
+   <y>327</y>
+  </hint>
+ </hints>
+</connection>
+
+  <connection>
    <sender>checkBoxEraseExcludeRange</sender>
    <signal>toggled(bool)</signal>
    <receiver>lineEditEraseExcludeRangeHigh</receiver>
@@ -2134,6 +2158,7 @@ Shift + Left button to erase.
   <slot>OnLineEditContourValue(QString)</slot>
   <slot>OnDrawRangeChanged(QString)</slot>
   <slot>OnExcludeRangeChanged(QString)</slot>
+  <slot>On3DBrushChanged(bool)</slot>
   <slot>OnLineEditSmoothSD(QString)</slot>
   <slot>OnReplaceLabel()</slot>
   <slot>OnCheckReconEditing(bool)</slot>
